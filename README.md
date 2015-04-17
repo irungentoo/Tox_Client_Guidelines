@@ -1,5 +1,4 @@
 # Tox Client Guidelines.
-===
 This git repo contains the documentation for the suggestions and recommendations a model Tox client would follow. As
 with any client, you don't have to follow them as most are merely recommendation however if you do not only will your
 users will thank you, but other clients won't hate you either!
