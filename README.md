@@ -31,3 +31,5 @@ client should follow these for optimal compatibility with the other *cool* clien
 These are some quarks or procedures that other clients tend to use. The docs here will never break compatibility, and
 it's likely that any client that does use these will likely change for something better. But it can't hurt to follow
 them so you should at least check them out.
+
+Also included are some general ideas that will endear you to you users!
