@@ -1,4 +1,4 @@
-#File Transfers
+# File Transfers
 The ability to send and receive files is a required feature for any useful instant messaging client. Toxcore will handle
 all of your data transfer needs. All you have to do is provide the data, and any helpful information to pass along to
 your friend.
@@ -10,26 +10,25 @@ At the very least, you'll need to give Toxcore
  * A name for the file you're sending, along with the length of the name string (don't include the NULL term in the
  length, but do include one!)
 Optionally, you can also provide a file_id, and an int pointer if you'd like an error code if something goes wrong. The
-api funciton looks like this `tox_file_send(tox, friend_number, TOX_FILE_KIND_DATA, file_size, file_id, filename,
-filename_length, &error);`
+API function looks like this `tox_file_send(tox, friend_number, TOX_FILE_KIND_DATA, file_size, file_id, filename,
+filename_length, error);`
 
-#File Resuming
+## File Resuming
+Good clients support file resuming. Great clients do so even across client/core restarts!
 
-Clients must support file resuming even across client restarts.
+Toxcore doesn't keep data that might have expired. So File transfers for a specific friend are purged from core whenever
+that friend goes offline/disconnects. Toxcore also makes no attempt to save file transfer info in the core data file.
+This means that it's the sole responsibility of the client to index, save, and restore file transfer information.
+Clients must take care of resuming file transfers using the same `file_id` parameter and make use of the `seek api` to
+avoid duplicating data. If you don't want to create your own file_id, Toxcore will generate one for you that you can
+retrieve with `tox_file_get_file_id(tox, friend_number, file_number, new_id, error);`. You're always welcome to supply a
+file_id yourself, but the general recommendation is to let Toxcore generate one for you. You can do this by setting
+file_id to NULL.
 
-File transfers for a specific friend are purged from core as soon as that
-friend goes offline. They are also not saved in the core data file. This means
-that clients must take care of resuming file transfers using the file_id
-parameter and seek function.
-
-A client sending a file will create a new file transfer (it is recommended that
-the file_id parameter is set to NULL so that a random file_id is generated for
-the new transfer but the client may choose to generate one itself).
-
-The sending client will save the file_id (tox_file_get_file_id()) along with
-file location and any other information that is needed to resend the file. This
-information must be saved in long term memory (like the tox save) so that its
-contents can be loaded if the client suddenly closes.
+When you're ready to resume a broken/interrupted transfer, you'll need to start the transfer from the original sending
+client. The sending client will save the file_id (tox_file_get_file_id()) along with file data/location, and any other
+useful information that your client may need to restart the file. Again, this information must be saved in long term by
+the client, because Toxcore won't save anything for you.
 
 If the file transfer completes, the client should delete all stored info about
 the file. A file completes when the receiver has received it completely as such
