@@ -1,21 +1,35 @@
-Tox Client Guidelines
-===
+# Tox Client Guidelines.
+This git repo contains the documentation for the suggestions and recommendations a model Tox client would follow. As
+with any client, you don't have to follow them as most are merely recommendation however if you do not only will your
+users will thank you, but other clients won't hate you either!
 
-This contains all the docs a model Tox client should follow. You don't have to follow them, these are just recommendation however if you do your users will thank you.
+Additionally, some client quirks are also detailed to make interaction a little enigmatic.
 
-To suggest a change to this doc make a pull request.
+All suggestions and contributions from other clients (or any community member) are always welcome! To suggest a change
+to this or any of the other docs available make a pull request at
+[GitHub](https://github.com/irungentoo/Tox_Client_Guidelines)
 
-If you want contributor access to this repo and are a client dev, just ask me.
+If you're a developer for in the tox community, and would like to contribute regularly, send me a message. You should
+already know where to find me.
 
+## Hierarchy of recommendations.
+The docs in this repo are sorted into different folders by how important it is that clients to follow them:
 
-The docs in this repo are categorized in different folders depending on how important it is for clients to follow them:
+### [Required](Required/):
+Your client must follow these or else using it with other clients in Tox will be very difficult or impossible. Ignoring
+these WILL make other dev's curse your very existence, and your users abandon you!
 
-Must Follow: Your client must follow these or else using it with other clients in Tox will be very difficult or impossible.
+### [Important](Important/):
+Your client must follow these but not following them won't make it impossible to use with other clients. It might cause
+some headaches for your users, and you'll likely be shunned by other dev's, or at the very least... mocked relentlessly.
 
-Important: Your client must follow these but not following them won't make it impossible to use with other clients. It might cause some headaches for users though.
+### [Recommendations](Recomendations/):
+These are general recommendations, strictly speaking these aren't yet standard, but it's what everyone else does... Your
+client should follow these for optimal compatibility with the other *cool* clients. And don't you want to be cool too?!
 
-Medium Importance: Your client should follow these for optimal compatibility with other clients.
+### [Suggestions](Suggestions/):
+These are some quirks or procedures that other clients tend to use. The docs here will never break compatibility, and
+it's likely that any client that does use these will likely change for something better. But it can't hurt to follow
+them so you should at least check them out.
 
-Recommendations: These are just recommendations, your client doesn't have to follow them but you should check them out.
-
-
+Also included are some general ideas that will endear you to you users!
