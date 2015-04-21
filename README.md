@@ -23,7 +23,7 @@ these WILL make other dev's curse your very existence, and your users abandon yo
 Your client must follow these but not following them won't make it impossible to use with other clients. It might cause
 some headaches for your users, and you'll likely be shunned by other dev's, or at the very least... mocked relentlessly.
 
-### [Recommendations](Recomendations/):
+### [Recommendations](Recommendations/):
 These are general recommendations, strictly speaking these aren't yet standard, but it's what everyone else does... Your
 client should follow these for optimal compatibility with the other *cool* clients. And don't you want to be cool too?!
 
