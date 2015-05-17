@@ -7,13 +7,3 @@ about the incoming file, but you got that information from long term storage, (e
 prompt the user before resuming. Tox file transfers use all of the available bandwidth and may cause bottlenecks that
 would inconvenience users, if they're friend comes online at an inopportune time. But as always, it's up to however you
 wish to handle file transfers.
-
-## Client quirks
-The following is a (likely non-exhaustive) list of clients that do something strange.
-
-### uTox
-uTox uses a different TOX_FILE_KIND for resumed transfers. As of
-[uTox@e6c346b4](https://github.com/notsecure/uTox/commit/e6c346b4dd006b01293678ab0f38f91282298af9) `TOX_FILE_KIND_EXISTING` is defined as 3. This
-may change if Toxcore adopts this scheme, or if Toxcore adopts a different one that conflicts. Currently uTox will not
-try to resume an existing transfer if `TOX_FILE_KIND` is set to `TOX_FILE_KIND_DATA` and will instead just treat it as
-new.
