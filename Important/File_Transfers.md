@@ -48,7 +48,7 @@ Complient clients will first check if it has any incomplete files with the same 
 incomplete file and look at how much data was received already, and use
 `tox_file_seek(tox, friend_number, file_number, size_transferred, error)` with the 4th parameter equal to the number of
 bytes already received. It will then call
-`tox_file_control(tox, friend_number, file_number, TOX_FILE_CONTROL_ACCEPT, error)` to accept the transfer. It's up to
+`tox_file_control(tox, friend_number, file_number, TOX_FILE_CONTROL_RESUME, error)` to accept the transfer. It's up to
 your client if you want to prompt the user to RE-accept the transfer, or just resume the transfer automatically for the
 user. See also [Resuming Suggestions](Suggestions/Resuming.md).
 
